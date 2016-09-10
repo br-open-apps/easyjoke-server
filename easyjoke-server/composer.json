@@ -1,0 +1,54 @@
+{
+    "name": "phelipe/vttgo-core",
+    "description": "Vtt Core.",
+    "license": "MIT",
+    "type": "project",
+    "require": {
+        "php": ">=5.5.9",
+        "laravel/framework": "5.2.*",
+        "adamkearsley/convert-migrations": "dev-master",
+        "dingo/blueprint": "0.2.x-dev",
+        "dingo/api": "dev-master",
+        "barryvdh/laravel-cors": "^0.8.1",
+        "tymon/jwt-auth": "0.5.*",
+        "ramsey/uuid": "3.*",
+        "league/glide": "^1.1",
+        "league/glide-laravel": "^1.0"
+    },
+    "require-dev": {
+        "fzaninotto/faker": "~1.4",
+        "mockery/mockery": "0.9.*",
+        "phpunit/phpunit": "~4.0",
+        "symfony/css-selector": "2.8.*|3.0.*",
+        "symfony/dom-crawler": "2.8.*|3.0.*"
+    },
+    "autoload": {
+        "classmap": [
+            "database"
+        ],
+        "psr-4": {
+            "App\\": "app/"
+        }
+    },
+    "autoload-dev": {
+        "classmap": [
+            "tests/TestCase.php"
+        ]
+    },
+    "scripts": {
+        "post-install-cmd": [            
+            "Illuminate\\Foundation\\ComposerScripts::postInstall",
+            "php -r \"copy('.env.example', '.env');\"",
+            "php artisan key:generate",
+            "php artisan jwt:generate",
+            "php artisan optimize"
+        ],
+        "post-update-cmd": [
+            "Illuminate\\Foundation\\ComposerScripts::postUpdate",
+            "php artisan optimize"
+        ]
+    },
+    "config": {
+        "preferred-install": "dist"
+    }
+}
