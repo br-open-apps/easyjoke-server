@@ -1,0 +1,55 @@
+GET /cateogories/
+
+	{
+	  "data": [
+	    {
+	      "id": 1,
+	      "name": "Joao zinho"
+	    },
+	    {
+	      "id": 2,
+	      "name": "Engraçadas"
+	    }
+	  ],
+	  "meta": {
+	    "pagination": {
+	      "total": 2,
+	      "count": 2,
+	      "per_page": 15,
+	      "current_page": 1,
+	      "total_pages": 1,
+	      "links": []
+	    }
+	  }
+	}
+
+GET /cateogories/{id}/jokes
+
+	{
+	  "data": [
+	    {
+	      "id": 1,
+	      "title": "Os loucos e a árvore",
+	      "content": "<p>Dois loucos viajavam de trem. Daí um olha para a janela e comenta com o outro:</p><p>- Nossa, como as árvores andam depressa.&nbsp;</p><p>O outro responde:</p><p>- Da próxima vez nós vamos é de árvore!!!</p>",
+	      "approved": false,
+	      "category_id": 1
+	    },
+	    {
+	      "id": 2,
+	      "title": "Os loucos e a árvore 2",
+	      "content": "<p>Dois loucos viajavam de trem. Daí um olha para a janela e comenta com o outro:</p><p>- Nossa, como as árvores andam depressa.&nbsp;</p><p>O outro responde:</p><p>- Da próxima vez nós vamos é de árvore!!!</p>",
+	      "approved": false,
+	      "category_id": 2
+	    }
+	  ],
+	  "meta": {
+	    "pagination": {
+	      "total": 2,
+	      "count": 2,
+	      "per_page": 15,
+	      "current_page": 1,
+	      "total_pages": 1,
+	      "links": []
+	    }
+	  }
+	}
